@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% load static %}
+{% load extra_tags %}
+
+<!--https://github.com/Amphiluke/floating-scroll#floating-scroll-->
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/programs.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'cdn/css/jquery.floatingscroll.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+{% endblock styles %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+<!-- <script src="{% static 'cdn/js/jquery.floatingscroll.min.js' %}"></script> -->
+{% endblock scripts %}
+
+{% block nav-programming %}active{% endblock %}
+
+{% block title %} | Programming{% endblock %}
+
+{% block banner %}
+<div class="banner-container small-banner row">
+  <img class="banner small-banner" src="{% static 'media/banner_test.png' %}">
+  <div class="banner-text-box col-12">
+    <div class="banner-text ">
+      {% if lang == "eng" %}
+        <h1>Programming</h1>
+      {% elif lang == "jpn" %}
+        <h1>プログラミング</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="construction col-6">
+    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+  </div>
+</div>
+
+<div class="container d-none">
+  <div class="row padded">
+    <div class="col-12 section-body intro">
+      <p>Though I have little formal education in programming, I pursued my own education in Python after graduating from undergraduate. I primarily program in Python, but there are some samples of JavaScript and R also included below.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 padded">
+      <div class="tab-box">
+        <div class="align-items-start">
+          <div class="nav navbar-dark navbar-expand-lg flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-tab active" id="nav-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
+            <a class="nav-tab" id="nav-demo-tab" data-toggle="tab" href="#show-demo" role="tab" aria-controls="show-demo" aria-selected="false">Interactive Demos</span>
+            {% for i in programs %}
+              {% if i.demo %}
+              <a class="sub nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#show-{{i|cut:" "}}" role="tab" aria-controls="show-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9 padded">
+      <div class="tab-content tab-body" id="tabContent">
+        <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
+          <div class="card-columns">
+            {% for i in programs %}
+            <a class="modal-trigger" data-program="{{i|cut:" "}}">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title">
+                    {{i.name}}
+                  </div>
+                  <div class="language">
+                    <div class="row justify-content-around">
+                      {% if i.python %}
+                      <div class="col-1 python" data-toggle="tooltip" data-placement="bottom" title="Python"></div>
+                      {% endif %}
+                      {% if i.js %}
+                      <div class="col-1 js" data-toggle="tooltip" data-placement="bottom" title="JavaScript"></div>
+                      {% endif %}
+                      {% if i.r %}
+                      <div class="col-1 r" data-toggle="tooltip" data-placement="bottom" title="R"></div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    {{i.description}}
+                  </div>
+                  {% if i.demo %}
+                  <div class="demobtn demo d-flex justify-content-center">
+                    <button class="btn btn-custom-inv demobtn" data-program="{{i|cut:" "}}">JS Demo</button>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="show-demo" role="tabpanel" aria-labelledby="show-demo-tab">
+          <div class="card-columns">
+          {% for i in programs %}
+            {% if i.demo %}
+            <a class="modal-trigger" data-program="{{i|cut:" "}}">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title">
+                    {{i.name}}
+                  </div>
+                  <div class="language">
+                    <div class="row justify-content-around">
+                      {% if i.python %}
+                      <div class="col-1 python" title="Python"></div>
+                      {% endif %}
+                      {% if i.js %}
+                      <div class="col-1 js" title="JavaScript"></div>
+                      {% endif %}
+                      {% if i.r %}
+                      <div class="col-1 r" title="R"></div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="card-text">
+                    {{i.description}}
+                  </div>
+                  <div class="demo d-flex justify-content-center demobtn">
+                    <button class="btn btn-custom-inv demobtn" data-program="{{i|cut:" "}}">JS Demo</button>
+                  </div>
+                </div>
+              </div>
+            </a>
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+        {% for i in programs %}
+          {% if i.demo %}
+          <div class="tab-pane fade" id="show-{{i|cut:" "}}" role="tabpanel" aria-labelledby="show-{{i|cut:" "}}-tab">
+            {% include i.html %}
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% for i in programs %}
+  <div id="modal-{{i|cut:" "}}" class="modal">
+    <div class="row align-items-center justify-content-center h-100">
+      <div class="col-lg-8 col-md-10 animate__animated animate__fadeInDown animate__faster" style="padding:0px;">
+        <div class="modal-con">
+          <span class="close">&times;</span>
+          <div class="col-12" style="text-align: center;">
+            <div class="title-display">
+              {{i}}
+            </div>
+          </div>
+          <div class="accordion col-12" id="accordion{{i|cut:" "}}" style="width:100%;">
+            <div class="card">
+              {% if not i.python %}
+              <div class="card-header no-code">
+                Python
+              </div>
+              {% else %}
+              <div class="card-header" id="headingPython-{{i|cut:" "}}" data-toggle="collapse" data-target="#python-{{i|cut:" "}}" data-language="python" data-project="{{i|cut:" "}}" aria-expanded="true" aria-controls="python-{{i|cut:" "}}">
+                Python
+              </div>
+              <div id="python-{{i|cut:" "}}" class="collapse show fl-scrolls-viewport" aria-labelledby="headingPython-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
+                <div class="card-body console-display fl-scrolls-body">
+                  <pre class="scrollable">{{i.python|print_file_content}}</pre>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="card">
+              {% if not i.js %}
+              <div class="no-code card-header">
+                JavaScript
+              </div>
+              {% else %}
+              <div class="card-header collapsed" id="headingJS-{{i|cut:" "}}" data-toggle="collapse" data-target="#js-{{i|cut:" "}}" data-language="js" data-project="{{i|cut:" "}}" aria-expanded="false" aria-controls="js-{{i|cut:" "}}">
+                JavaScript
+              </div>
+              <div id="js-{{i|cut:" "}}" class="collapse fl-scrolls-viewport" aria-labelledby="headingJS-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
+                <div class="card-body console-display fl-scrolls-body">
+                  <pre class="scrollable">{{i.js|print_file_content}}</pre>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="card">
+              {% if not i.r %}
+              <div class="no-code card-header">
+                R
+              </div>
+              {% else %}
+              <div class="card-header collapsed" id="headingR-{{i|cut:" "}}" data-toggle="collapse" data-target="#r-{{i|cut:" "}}" data-language="r" data-project="{{i|cut:" "}}" aria-expanded="false" aria-controls="r-{{i|cut:" "}}">
+                R
+              </div>
+              <div id="r-{{i|cut:" "}}" class="collapse" aria-labelledby="headingR-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
+                <div class="card-body console-display scrollable">
+                  <pre>{{i.r|print_file_content}}</pre>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

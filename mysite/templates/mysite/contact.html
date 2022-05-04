@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock styles %}
+
+{% block scripts %}{% endblock scripts %}
+
+{% block title %} | Contact{% endblock %}
+{% block nav-contact %}active{% endblock %}
+
+{% block banner %}
+<div class="banner-container small-banner row">
+  <img class="banner small-banner" src="{% static 'media/banner_test.png' %}">
+  <div class="banner-text-box col-12">
+    <div class="banner-text ">
+      {% if lang == "eng" %}
+        <h1>Contact</h1>
+      {% elif lang == "jpn" %}
+        <h1>連絡先</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="construction col-6">
+    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+  </div>
+</div>
+
+<div class="container d-none">
+  <div class="row">
+    <div class="col-12">
+      <div class="section-head">I look forward to hearing from you!</div>
+    </div>
+    <div class="col">
+      <div class="contact" style='text-align: center'>
+        <b><span>.</span><span>k</span><span>?</span><span>a</span><span>r</span><span>y</span><span>fg</span><span>k</span><span>k</span><span>o</span><span>p</span><span>.</span><span>s</span><span>o</span><span>l</span><span>h</span><span>g</span><span>k</span><span>m</span><span>a</span><span>m</span><span>w</span><span>p</span><span>a</span><span>a</span><span>@</span><span>@</span><span>g</span><span>x</span><span>m</span><span>i</span><span>a</span><span>e</span><span>i</span><span>d</span><span>l</span><span>l</span><span>.</span><span>w</span><span>c</span><span>m</span><span>o</span><span>z</span><span>m</span></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-4 divider"></div>
+  </div>
+
+</div>
+{% endblock %}

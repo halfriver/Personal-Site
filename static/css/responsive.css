@@ -1,0 +1,15 @@
+/* For mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .navbar-toggler {
+    margin-right: 20px;
+  }
+  #logo {
+    margin-left: 20px;
+  }
+  .col-auto {
+    width: 50%;
+  }
+  .section-body p {
+    text-indent: 25px;
+  }
+}

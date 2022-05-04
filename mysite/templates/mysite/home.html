@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block title %} | About{% endblock %}
+{% block nav-home %}active{% endblock %}
+
+{% block banner %}
+<div class="banner-container large-banner row">
+  <img class="banner large-banner" src="{% static 'media/IMG_3680.JPG' %}">
+  <div class="banner-text-box col-12">
+    <div class="banner-text">
+      {% if lang == "eng" %}
+        <h1>I'm Kayko Ohkawa</h1>
+        <h3>Data Analyst</h3>
+      {% elif lang == "jpn" %}
+        <h1><fg t='オオカワ・ケイコ'>Kayko Ohkawaです</fg></h1>
+        <h3>Data Analyst</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="construction col-6">
+    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+  </div>
+</div>
+
+<div class="container d-none">
+  <!-- Section: About -->
+  <div class="row section">
+    <!-- Title -->
+    <div class="col-12">
+      <div class="section-head subsection">
+        {% if lang == "eng" %}
+          <h4>About</h4>
+        {% elif lang == "jpn" %}
+          <h4>はじめに</h4>
+        {% endif %}
+      </div>
+    </div>
+    <!-- Image -->
+    <div class="col-12 col-lg-4">
+      <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
+    </div>
+    <!-- Body -->
+    <div class="col-12 col-lg-8 h-100">
+      <div class="subsection">
+        <p></p>
+        {% for p in home.About %}
+          <p>{{p}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-4 divider-top"></div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4 divider-bottom"></div>
+  </div>
+
+  <!-- Section: Hobbies -->
+  <div class="row section">
+    <div class="col-12"> <!-- Title -->
+      <div class="section-head subsection">
+        {% if lang == "eng" %}
+          <h4>Hobbies</h4>
+        {% elif lang == "jpn" %}
+          <h4>趣味</h4>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-12"> <!-- Body -->
+      <div class="subsection">
+        <p></p>
+        {% for p in home.Hobbies %}
+          <p>{{p}}</p>
+        {% endfor %}
+        <div id="hobby-collection" class="row justify-content-center">
+          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+            <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Dixie National Forest</span>">
+          </div>
+          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+            <img class="hobby-pic img-fluid" src="{% static 'media/cinnabar.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>His name is Cinnabar</span>">
+          </div>
+          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+            <img class="hobby-pic img-fluid" src="{% static 'media/garden.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Probably overwatering them</span>">
+          </div>
+          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+            <img class="hobby-pic img-fluid" src="{% static 'media/syncline.png' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Look at that syncline!</span>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-4 divider"></div>
+  </div>
+
+  <!-- Section: Programming -->
+  <div class="row section">
+    <div class="col-12"> <!-- Title -->
+      <div class="section-head subsection">
+        {% if lang == "eng" %}
+          <h4>Programming</h4>
+        {% elif lang == "jpn" %}
+          <h4>プログラミング</h4>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-12 col-lg-4"> <!-- Image -->
+      <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
+    </div>
+    <div class="col-12 col-lg-8 h-100"> <!-- Body -->
+      <div class="subsection">
+        <p></p>
+        {% for p in home.Programming %}
+          <p>{{p}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-4 divider"></div>
+  </div>
+
+  <!-- Section: Art -->
+  <div class="row section">
+    <div class="col-12"> <!-- Title -->
+      <div class="section-head subsection">
+        {% if lang == "eng" %}
+          <h4>Art</h4>
+        {% elif lang == "jpn" %}
+          <h4>アート</h4>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-4 col-lg-3"> <!-- Image -->
+      <img id="art-pic" class="subsection" src="{% static 'media/defaultfish.png' %}">
+    </div>
+    <div class="col-8 col-lg-9 h-100"> <!-- Body -->
+      <div class="subsection">
+        <p></p>
+        {% for p in home.Art %}
+          <p>{{p}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-4 divider"></div>
+  </div>
+
+  <!-- Section: Connect -->
+  <div class="row section">
+    <div class="col-12"> <!-- Title -->
+      <div class="section-head subsection">
+        {% if lang == "eng" %}
+          <h4>Contact</h4>
+        {% elif lang == "jpn" %}
+          <h4>連絡先</h4>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="subsection">
+        <p>I have a wide variety of interests, so please feel free to contact me at
+          <a class="contact" href="mailto:&#107;&#097;&#121;&#107;&#111;&#046;&#111;&#104;&#107;&#097;&#119;&#097;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+            <span>.</span><span>k</span><span>?</span><span>a</span><span>r</span><span>y</span><span>fg</span><span>k</span><span>k</span><span>o</span><span>p</span><span>.</span><span>s</span><span>o</span><span>l</span><span>h</span><span>g</span><span>k</span><span>m</span><span>a</span><span>m</span><span>w</span><span>p</span><span>a</span><span>a</span><span>@</span><span>@</span><span>g</span><span>x</span><span>m</span><span>i</span><span>a</span><span>e</span><span>i</span><span>d</span><span>l</span><span>l</span><span>.</span><span>w</span><span>c</span><span>m</span><span>o</span><span>z</span><span>m</span>
+          </a>
+          anytime!
+          I'd love to discuss anything related to anything that's mentioned here on my website.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-4 divider"></div>
+  </div>
+</div>
+{% endblock content %}

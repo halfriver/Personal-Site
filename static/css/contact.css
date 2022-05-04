@@ -1,0 +1,12 @@
+
+.contact span:nth-child(2n + 1){
+	display: none;
+}
+
+.noto {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.mont {
+  font-family: 'Montserrat', sans-serif;
+}

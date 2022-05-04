@@ -1,0 +1,8 @@
+db.sqlite3
+mysite/__pycache__/
+mysite/templatetags/__pycache__/
+mysite/secrets.py
+mysite/migrations/
+static/files/
+static/media/
+
