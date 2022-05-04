@@ -12,8 +12,8 @@ home_headers = ['About','Hobbies','Programming','Art']
 #             "I have worked in various positions from urban gardener to expense report auditor, but I have now found my home in the field of data science and analytics! In addition to economics and programming, I am passionate about plants, fish, and rocks."]
 # }
 
-home_eng = {x:[p for p in open(settings.BASE_DIR + "\\static\\files\content\\eng\\" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in home_headers}
-home_jpn = {x:[p for p in open(settings.BASE_DIR + "\\static\\files\content\\jpn\\" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in home_headers}
+home_eng = {x:[p for p in open(settings.BASE_DIR + "/static/files/content/eng/" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in home_headers}
+home_jpn = {x:[p for p in open(settings.BASE_DIR + "/static/files/content/jpn/" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in home_headers}
 
 art_eng = {}
 art_jpn = {}
