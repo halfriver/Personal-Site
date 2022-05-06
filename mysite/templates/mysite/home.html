@@ -11,8 +11,8 @@
 {% block nav-home %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container large-banner row">
-  <img class="banner large-banner" src="{% static 'media/IMG_3680.JPG' %}">
+<div class="banner-container medium-banner row">
+  <!-- <img class="banner medium-banner" src="{% static 'media/IMG_3680.JPG' %}"> -->
   <div class="banner-text-box col-12">
     <div class="banner-text">
       {% if lang == "eng" %}
@@ -28,11 +28,34 @@
 {% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-  <div class="construction col-6">
-    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+<div class="container-flex">
+  <div class="row justify-content-center">
+    <div class="construction col-8 col-lg-6">
+      <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+    </div>
   </div>
 </div>
+
+<div class="container">
+  <!-- Title -->
+  <div class="row justify-content-end">
+    <div class="col-12 col-lg-6">
+      <div class="section-head">
+      <h4>About</h4>
+    </div>
+  </div>
+  <div class="row position-relative">
+    <div class="col-12 align-self-start position-absolute" style="top:0;">
+      <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
+    </div>
+    <div class="col align-self-end position-absolute end-0">
+      hi
+    </div>
+  </div>
+</div>
+
+
+
 
 <div class="container d-none">
   <!-- Section: About -->
