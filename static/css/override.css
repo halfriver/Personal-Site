@@ -150,12 +150,13 @@ nav {
 .nav-box {
   border-radius: 5px;
   padding: 0rem 0.5rem;
+  border: 2px solid rgba(201, 211, 216, 0.15);
 }
-
-.nav-box-white {
-  border-radius: 5px !important;
+/*
+.nav-box-vis {
+  border-radius: 5px;
   padding: 0rem 0.5rem;
-}
+} */
 
 .nav-box-collapse {
   border-radius: 0px;
@@ -338,8 +339,8 @@ fg {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: rgba(242, 244, 243, .4);
-  border: 2px solid rgba(242, 244, 243, 0); */
+  background-color: rgba(240, 243, 245, 0.45);
+  border: 2px solid rgba(242, 244, 243, 0);
   -webkit-transition: .4s;
   transition: .4s;
 }

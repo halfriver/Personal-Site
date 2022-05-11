@@ -1,0 +1,99 @@
+/* DEFAULT - LIGHT MODE */
+
+/* THEME COLORS
+Main: rgba(177, 193, 201, 1);
+Main Light: rgba(208, 219, 225, 1);
+Highlight: rgba(222, 230, 234, 1);
+
+Accent: rgba(43, 80, 99, 1);
+Accent Light: rgba(54, 96, 117, 1);
+Black: rgba(38, 40, 41, 1);
+White: rgba(240, 243, 245, 1);
+*/
+
+
+::-webkit-scrollbar-track {
+   background: rgba(177, 193, 201, 0);
+}
+
+::-webkit-scrollbar-thumb {
+   background: rgba(208, 219, 225, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgba(222, 230, 234, 1);
+}
+
+body {
+  color:  rgba(38, 40, 41, 1);
+  background-color: rgba(177, 193, 201, 1);
+}
+
+a {
+  color: rgba(46, 46, 46, 1);
+}
+
+a:hover {
+  color: rgba(40, 70, 85, 1);
+}
+
+.dropdown-divider {
+  border-top: 2px solid rgba(240, 243, 245, 0.15);
+}
+
+nav {
+  background-color: rgba(54, 96, 117, 0.65);
+}
+
+/* .nav-box-vis {
+  border: 2px solid rgba(38, 40, 41, 0.25);
+} */
+
+.dropdown-menu {
+  background-color: rgba(208, 219, 225, 1);
+}
+.dropdown-item {
+  color: rgba(38, 40, 41, 0.75)!important;
+}
+.dropdown-item:hover {
+  background-color: rgba(222, 230, 234, 1);
+}
+.lang-active {
+  color: rgba(38, 40, 41, 1)!important;
+}
+
+.section-head {
+  color: rgba(43, 80, 99, 1);
+}
+
+.section {
+  background-color: rgba(238, 243, 245, 1);
+}
+
+.subsection {
+  background-color: rgba(222, 230, 234, 1);
+}
+
+.divider {
+  border: 0.5rem solid rgba(153, 116, 3, 0.75);
+}
+.divider-top {
+  border: 0.25rem solid rgba(153, 116, 3, 1);
+}
+.divider-bottom {
+  border: 0.25rem solid rgba(153, 116, 3, 1);
+}
+
+.slider:before {
+  background-color: rgba(240, 243, 245, 0.75);
+}
+
+input:checked + .slider {
+  background-color: rgba(22, 42, 52, 1);
+  border: 2px solid rgba(201, 211, 216, .55);
+}
+
+.construction {
+  background-color: rgba(208, 219, 225, 1);
+  color: #2b5063;
+}

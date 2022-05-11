@@ -45,18 +45,14 @@ a:hover {
 nav {
   background-color: rgba(13, 28, 28, 0.65);
 }
-
+/*
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(201, 211, 216, .55);
-}
+} */
 
-.nav-box {
-  border: 2px solid rgba(197, 211, 211, 0);
-}
-
-.nav-box-white {
+/* .nav-box-vis {
   border: 2px solid rgba(201, 211, 216, 0.15);
-}
+} */
 
 .dropdown-menu {
   background-color: rgba(27, 50, 62, 1);
