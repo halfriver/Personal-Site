@@ -28,99 +28,138 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-flex">
-  <div class="row justify-content-center">
-    <div class="construction col-8 col-lg-6">
-      <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
-    </div>
-  </div>
-</div>
+<div class="container">
 
-<div class="container d-none">
-  <!-- Title -->
-  <div class="row justify-content-end">
-    <div class="col-12 col-lg-6">
-      <div class="section-head">
-      <h4>About</h4>
-    </div>
-  </div>
-  <div class="row position-relative">
-    <div class="col-12 align-self-start position-absolute" style="top:0;">
-      <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
-    </div>
-    <div class="col align-self-end position-absolute end-0">
-      hi
-    </div>
-  </div>
-</div>
+  <!-- Top Spacer -->
+  <div class="row" style="height: 2rem;"></div>
 
-
-
-
-<div class="container d-none">
   <!-- Section: About -->
-  <div class="row section">
-    <!-- Title -->
-    <div class="col-12">
-      <div class="section-head subsection">
-        {% if lang == "eng" %}
-          <h4>About</h4>
-        {% elif lang == "jpn" %}
-          <h4>はじめに</h4>
-        {% endif %}
-      </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-10 section-head">
+      {% if lang == "eng" %}
+        <h4>About</h4>
+      {% elif lang == "jpn" %}
+        <h4>はじめに</h4>
+      {% endif %}
     </div>
-    <!-- Image -->
-    <div class="col-12 col-lg-4">
+  </div>
+  <div class="row justify-content-center d-lg-none">
+    <div class="col-8">
       <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
     </div>
-    <!-- Body -->
-    <div class="col-12 col-lg-8 h-100">
-      <div class="subsection">
-        <p></p>
-        {% for p in home.About %}
-          <p>{{p}}</p>
-        {% endfor %}
+  </div>
+  <div class="row justify-content-center">
+    <div class="col section d-flex">
+      <div class="row justify-content-center align-items-center">
+        <img id="avatar" class="subsection col d-none d-lg-block" src="{% static 'media/profile.png' %}">
+        <div class="col subsection">
+          {% for p in home.About %}
+            <p>{{p}}</p>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
   <!-- Divider -->
   <div class="row justify-content-center">
-    <div class="col-4 divider-top"></div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-4 divider-bottom"></div>
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
   </div>
 
+
   <!-- Section: Hobbies -->
-  <div class="row section">
-    <div class="col-12"> <!-- Title -->
-      <div class="section-head subsection">
-        {% if lang == "eng" %}
-          <h4>Hobbies</h4>
-        {% elif lang == "jpn" %}
-          <h4>趣味</h4>
-        {% endif %}
-      </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-10 section-head">
+      {% if lang == "eng" %}
+        <h4>Hobbies</h4>
+      {% elif lang == "jpn" %}
+        <h4>趣味</h4>
+      {% endif %}
     </div>
-    <div class="col-12"> <!-- Body -->
-      <div class="subsection">
-        <p></p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col section-hollow">
+      <div class="hobby-section subsection-hollow">
         {% for p in home.Hobbies %}
           <p>{{p}}</p>
         {% endfor %}
-        <div id="hobby-collection" class="row justify-content-center">
-          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
-            <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Dixie National Forest</span>">
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col section-hollow">
+      <div id="hobby-collection" class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<span class='hobby-tooltip'>Dixie National Forest</span>">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/cinnabar.jpeg' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<span class='hobby-tooltip'>His name is Cinnabar</span>">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/garden.jpeg' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<span class='hobby-tooltip'>Probably overwatering</span>">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/syncline.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<span class='hobby-tooltip'>Look at that syncline!</span>">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- Section: Programming -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10 section-head">
+      {% if lang == "eng" %}
+        <h4>Programming</h4>
+      {% elif lang == "jpn" %}
+        <h4>プログラミング</h4>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row section justify-content-center">
+    <div class="col subsection">
+      {% for p in home.Programming %}
+        <p>{{p}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- Section: Art -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10 section-head">
+      {% if lang == "eng" %}
+        <h4>Art</h4>
+      {% elif lang == "jpn" %}
+        <h4>アート</h4>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col section-hollow d-flex align-center">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg subsection-hollow">
+          {% for p in home.Art %}
+            <p>{{p}}</p>
+          {% endfor %}
+        </div>
+        <div class="col-auto col-lg-4 art-stack subsection-hollow">
+          <div class="pic-bottom">
+            <img class="art-pic" src="{% static 'media/Mosa.png' %}">
           </div>
-          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
-            <img class="hobby-pic img-fluid" src="{% static 'media/cinnabar.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>His name is Cinnabar</span>">
-          </div>
-          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
-            <img class="hobby-pic img-fluid" src="{% static 'media/garden.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Probably overwatering them</span>">
-          </div>
-          <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
-            <img class="hobby-pic img-fluid" src="{% static 'media/syncline.png' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Look at that syncline!</span>">
+          <div class="pic-top">
+            <img class="art-pic" src="{% static 'media/defaultfish.png' %}">
           </div>
         </div>
       </div>
@@ -128,91 +167,62 @@
   </div>
   <!-- Divider -->
   <div class="row justify-content-center">
-    <div class="col-4 divider"></div>
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
   </div>
 
-  <!-- Section: Programming -->
-  <div class="row section">
-    <div class="col-12"> <!-- Title -->
-      <div class="section-head subsection">
-        {% if lang == "eng" %}
-          <h4>Programming</h4>
-        {% elif lang == "jpn" %}
-          <h4>プログラミング</h4>
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-12 col-lg-4"> <!-- Image -->
-      <img id="avatar" class="subsection" src="{% static 'media/profile.png' %}">
-    </div>
-    <div class="col-12 col-lg-8 h-100"> <!-- Body -->
-      <div class="subsection">
-        <p></p>
-        {% for p in home.Programming %}
-          <p>{{p}}</p>
-        {% endfor %}
-      </div>
+  <!-- Section: Contact -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10 section-head">
+      {% if lang == "eng" %}
+        <h4>Contact</h4>
+      {% elif lang == "jpn" %}
+        <h4>連絡先</h4>
+      {% endif %}
     </div>
   </div>
-  <!-- Divider -->
-  <div class="row justify-content-center">
-    <div class="col-4 divider"></div>
+  <div class="row section-hollow justify-content-center">
+    <div class="col col-lg-6 subsection-hollow">
+      <p></p>
+      {% for p in home.Contact %}
+        <p>{{p}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row section-hollow justify-content-center">
+    <div class="col-auto justify-content-center">
+      <div class="d-flex contact-box">
+        <ul class="m-0 p-0">
+          <li class="d-inline">
+            <a class="p-3 contact-link" href="https://github.com/halfriver" target="_blank">
+              <i class="bi bi-github contact-link"></i>
+            </a>
+          </li>
+          <li class="d-inline">
+            <a class="p-3 contact-link" href="https://www.linkedin.com/in/ohkawak/" target="_blank">
+              <i class="bi bi-linkedin contact-link"></i>
+            </a>
+          </li>
+          <li class="d-inline">
+            <a class="p-3 contact-link" href="mailto:&#107;&#097;&#121;&#107;&#111;&#046;&#111;&#104;&#107;&#097;&#119;&#097;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" target="_blank">
+              <i class="bi bi-envelope-fill contact-link"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <!-- Section: Art -->
-  <div class="row section">
-    <div class="col-12"> <!-- Title -->
-      <div class="section-head subsection">
-        {% if lang == "eng" %}
-          <h4>Art</h4>
-        {% elif lang == "jpn" %}
-          <h4>アート</h4>
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-4 col-lg-3"> <!-- Image -->
-      <img id="art-pic" class="subsection" src="{% static 'media/defaultfish.png' %}">
-    </div>
-    <div class="col-8 col-lg-9 h-100"> <!-- Body -->
-      <div class="subsection">
-        <p></p>
-        {% for p in home.Art %}
-          <p>{{p}}</p>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <!-- Divider -->
-  <div class="row justify-content-center">
-    <div class="col-4 divider"></div>
-  </div>
+  <!-- Bottom Spacer -->
+  <div class="row" style="height: 4rem;"></div>
+</div>
 
-  <!-- Section: Connect -->
-  <div class="row section">
-    <div class="col-12"> <!-- Title -->
-      <div class="section-head subsection">
-        {% if lang == "eng" %}
-          <h4>Contact</h4>
-        {% elif lang == "jpn" %}
-          <h4>連絡先</h4>
-        {% endif %}
-      </div>
-    </div>
-    <div class="col-12">
-      <div class="subsection">
-        <p>I have a wide variety of interests, so please feel free to contact me at
-          <a class="contact" href="mailto:&#107;&#097;&#121;&#107;&#111;&#046;&#111;&#104;&#107;&#097;&#119;&#097;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
-            <span>.</span><span>k</span><span>?</span><span>a</span><span>r</span><span>y</span><span>fg</span><span>k</span><span>k</span><span>o</span><span>p</span><span>.</span><span>s</span><span>o</span><span>l</span><span>h</span><span>g</span><span>k</span><span>m</span><span>a</span><span>m</span><span>w</span><span>p</span><span>a</span><span>a</span><span>@</span><span>@</span><span>g</span><span>x</span><span>m</span><span>i</span><span>a</span><span>e</span><span>i</span><span>d</span><span>l</span><span>l</span><span>.</span><span>w</span><span>c</span><span>m</span><span>o</span><span>z</span><span>m</span>
-          </a>
-          anytime!
-          I'd love to discuss anything related to anything that's mentioned here on my website.
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Divider -->
+<div class="d-none container-flex">
   <div class="row justify-content-center">
-    <div class="col-4 divider"></div>
+    <div class="construction col-8 col-lg-6">
+      <h3><i class="bi bi-exclamation-triangle"></i> {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %} <i class="bi bi-exclamation-triangle"></i><h3>
+    </div>
   </div>
 </div>
 {% endblock content %}

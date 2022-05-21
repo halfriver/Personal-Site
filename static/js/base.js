@@ -161,10 +161,11 @@ $(document).ready(function() {
      });
   }
 
-
-  // $(function () {
-    // $('[data-toggle="tooltip"]').tooltip()
-  // });
+  // initialize tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 
   // update footer copyright year
   $('.foot span').text(new Date().getFullYear());

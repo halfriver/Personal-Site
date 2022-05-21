@@ -5,7 +5,7 @@ from . import settings
 
 # request.POST.get('lang')
 
-home_headers = ['About','Hobbies','Programming','Art']
+home_headers = ['About','Hobbies','Programming','Art','Contact']
 # home = {
 #     'About': ["I am an Integrated Data Analyst - Associate at UPMC Workpartners. I graduated with my master's degree in Quantitative Economics from the University of Pittsburgh in May 2021. My capstone project involved working with the Pittsburgh Penguins to model appropriate salaries for minor league hockey players.",
 #             "My undergraduate degrees are in economics and geology. As an undergraduate, I studied abroad at Sophia University in Tokyo, Japan on a Nationality Room Scholarship and participated in research as a Pitt Honors College fellow.",

@@ -6,10 +6,40 @@
   #logo {
     margin-left: 20px;
   }
-  .col-auto {
+  /* .col-auto {
     width: 50%;
-  }
-  .section-body p {
+  } */
+  /* .section-body p {
     text-indent: 25px;
+  } */
+}
+
+/* For medium and smaller responsiveness */
+@media only screen and (max-width: 992px) {
+  .hobby-section {
+    column-count: 1;
+  }
+  /* .col-auto {
+    width: 50%;
+  } */
+  /* .section-body p {
+    text-indent: 25px;
+  } */
+}
+
+/* For large and smaller styles */
+@media (max-width: 1200px) {
+  /* nav collapse tweaks */
+  .right-links {
+    flex-direction: row;
+  }
+  .dropdown-menu {
+    position: absolute !important;
+  }
+  .nav-overlap {
+    text-align: left !important;
+  }
+  .swap {
+    margin-left: 0.5rem !important;
   }
 }

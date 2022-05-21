@@ -90,8 +90,8 @@
             <div class="row justify-content-center">
 
               <!-- external links -->
-              <div id="external-links" class="col-auto navbar-nav nav-box text-end">
-                <ul class="navbar-nav right-links text-end">
+              <div id="external-links" class="col-auto navbar-nav nav-box">
+                <ul class="navbar-nav right-links">
                   <li class="nav-item d-inline">
                     <a class="nav-link p-2" href="https://github.com/halfriver" target="_blank">
                       <i class="bi bi-github"></i>
@@ -123,7 +123,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <label class="switch p-2" data-toggle="tooltip" data-html="true" data-placement="bottom">
+                  <label class="switch p-2">
                     <input id="darkmode" type="checkbox" {% if darkmode == "dark" %}checked{% endif %}>
                     <span class="slider {% if darkmode == 'light' %}slider-light{% else %}slider-dark{% endif %} round"></span>
                   </label>
