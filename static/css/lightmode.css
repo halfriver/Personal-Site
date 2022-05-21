@@ -38,7 +38,7 @@ a:hover {
 }
 
 .dropdown-divider {
-  border-top: 2px solid rgba(240, 243, 245, 0.15);
+  border-top: 2px solid rgba(186, 143, 11, 0.55);
 }
 
 nav {
@@ -70,18 +70,33 @@ nav {
   background-color: rgba(238, 243, 245, 1);
 }
 
-.subsection {
-  background-color: rgba(222, 230, 234, 1);
+.divider {
+  border: 0.25rem solid rgba(54, 96, 117, 0.75);
+}
+.divider-dot-right {
+  border: 0.25rem dashed rgba(54, 96, 117, 0.75);
+}
+.divider-dot-left {
+  border: 0.25rem dashed rgba(54, 96, 117, 0.75);
 }
 
-.divider {
-  border: 0.5rem solid rgba(153, 116, 3, 0.75);
+.hobby-tooltip {
+  color: rgba(43, 80, 99, 1);
 }
-.divider-top {
-  border: 0.25rem solid rgba(153, 116, 3, 1);
+.tooltip-inner {
+  background-color: rgba(222, 230, 234, 1);
 }
-.divider-bottom {
-  border: 0.25rem solid rgba(153, 116, 3, 1);
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: rgba(222, 230, 234, 1);
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: rgba(222, 230, 234, 1);
+}
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: rgba(222, 230, 234, 1);
+}
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: rgba(222, 230, 234, 1);
 }
 
 .slider:before {
@@ -93,7 +108,22 @@ input:checked + .slider {
   border: 2px solid rgba(201, 211, 216, .55);
 }
 
+
+.contact-box {
+  background-color: rgba(238, 243, 245, 1);
+}
+.contact-link {
+  color: rgba(54, 96, 117, 0.85);
+}
+.contact-link:hover {
+  color: rgba(43, 80, 99, 1);
+}
+
 .construction {
   background-color: rgba(208, 219, 225, 1);
   color: #2b5063;
+}
+
+.foot {
+  color: rgba(43, 80, 99, 1);
 }

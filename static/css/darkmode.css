@@ -7,7 +7,7 @@ Main Light: rgba(27, 50, 62, 1);
 Highlight: rgba(31, 55, 68, 1);
 
 Accent: rgba(240, 243, 245, 1);
-Accent Light: rgba(186, 143, 11, 1);
+Accent Light: rgba(148, 113, 7, 1);
 Black: rgba(31, 32, 33, 1);
 White: rgba(201, 211, 216, 1);
 */
@@ -39,7 +39,7 @@ a:hover {
 }
 
 .dropdown-divider {
-  border-top: 2px solid rgba(201, 211, 216, 0.15);
+  border-top: 2px solid rgba(186, 143, 11, 0.65);
 }
 
 nav {
@@ -68,25 +68,39 @@ nav {
 }
 
 .section-head {
-  color: rgba(153, 116, 3, 1);
+  color: rgba(186, 143, 11, 1);
 }
-
 .section {
-  background-color: rgba(238, 243, 245, 1);
-}
-
-.subsection {
   background-color: rgba(31, 55, 68, 1);
 }
 
 .divider {
-  border: 0.5rem solid rgba(153, 116, 3, 0.75);
-}
-.divider-top {
   border: 0.25rem solid rgba(153, 116, 3, 1);
 }
-.divider-bottom {
-  border: 0.25rem solid rgba(153, 116, 3, 1);
+.divider-dot-right {
+  border: 0.25rem dashed rgba(153, 116, 3, 1);
+}
+.divider-dot-left {
+  border: 0.25rem dashed rgba(153, 116, 3, 1);
+}
+
+.hobby-tooltip {
+  color: rgba(186, 143, 11, 1);
+}
+.tooltip-inner {
+  background-color: rgba(31, 55, 68, 1);
+}
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: rgba(31, 55, 68, 1);
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: rgba(31, 55, 68, 1);
+}
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: rgba(31, 55, 68, 1);
+}
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: rgba(31, 55, 68, 1);
 }
 
 .slider:before {
@@ -98,7 +112,21 @@ input:checked + .slider {
   border: 2px solid rgba(201, 211, 216, .55);
 }
 
+.contact-box {
+  background-color: rgba(31, 55, 68, 1);
+}
+.contact-link {
+  color: rgba(201, 211, 216, 0.75);
+}
+.contact-link:hover {
+  color: rgba(186, 143, 11, 1);
+}
+
 .construction {
   background-color: rgba(27, 50, 62, 1);
-  color: #ba8f0b;
+  color: rgba(186, 143, 11, 1);
+}
+
+.foot {
+  color: rgba(201, 211, 216, 0.55);
 }
