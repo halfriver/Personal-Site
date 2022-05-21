@@ -31,11 +31,11 @@ body {
 }
 
 a {
-  color: rgba(46, 46, 46, 1);
+  color: rgba(201, 211, 216, 0.75);
 }
 
 a:hover {
-  color: rgba(40, 70, 85, 1);
+  color: rgba(186, 143, 11, 1);
 }
 
 .dropdown-divider {
@@ -114,12 +114,6 @@ input:checked + .slider {
 
 .contact-box {
   background-color: rgba(31, 55, 68, 1);
-}
-.contact-link {
-  color: rgba(201, 211, 216, 0.75);
-}
-.contact-link:hover {
-  color: rgba(186, 143, 11, 1);
 }
 
 .construction {

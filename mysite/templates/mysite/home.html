@@ -153,6 +153,12 @@
           {% for p in home.Art %}
             <p>{{p}}</p>
           {% endfor %}
+          {% if lang == "eng" %}
+            <p>More samples can be found in the <a href="http://halfriver.me/art/">art section</a></p>
+          {% elif lang == "jpn" %}
+            <p>作品のサンプルは、<a href="http://halfriver.me/art/">アートセクション</a>で見ることができます。</p>
+          {% endif %}
+
         </div>
         <div class="col-auto col-lg-4 art-stack subsection-hollow">
           <div class="pic-bottom">
@@ -183,8 +189,7 @@
     </div>
   </div>
   <div class="row section-hollow justify-content-center">
-    <div class="col col-lg-6 subsection-hollow">
-      <p></p>
+    <div class="col col-lg-6 subsection-hollow contact-section">
       {% for p in home.Contact %}
         <p>{{p}}</p>
       {% endfor %}
