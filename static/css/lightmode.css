@@ -62,6 +62,11 @@ nav {
   color: rgba(38, 40, 41, 1)!important;
 }
 
+.banner-text {
+  color: rgba(43, 80, 99, 1);
+  background-color: rgba(238, 243, 245, 0.9);
+}
+
 .section-head {
   color: rgba(43, 80, 99, 1);
 }

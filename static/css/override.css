@@ -19,7 +19,7 @@ body {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 2rem;
   font-weight: 400;
 }
@@ -168,12 +168,14 @@ fg {
   position: absolute;
   object-fit: cover;
   width: 100%;
+  max-height: 2000px;
   z-index: -1;
 }
 
 .banner-container {
   --bs-gutter-x: 0;
   width: 100%;
+  /* background-image: linear-gradient(to right, #5f7a87, #0d171c); */
 }
 
 .large-banner {
@@ -197,8 +199,9 @@ fg {
 .banner-text {
   width: 100%;
   text-align: center;
+  padding: 2rem;
+  border-radius: 5px;
   margin: auto;
-  color: rgba(240, 243, 245, 1);
 }
 
 #avatar {

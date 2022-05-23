@@ -11,9 +11,14 @@
 {% block nav-home %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container medium-banner row">
-  <!-- <img class="banner medium-banner" src="{% static 'media/IMG_3680.JPG' %}"> -->
-  <div class="banner-text-box col-12">
+<div class="banner-container medium-banner row justify-content-center">
+  {% if darkmode == "dark" %}
+    <img class="banner large-banner" src="{% static 'media/header_dark.PNG' %}">
+  {% else %}
+    <img class="banner large-banner" src="{% static 'media/header_light.PNG' %}">
+  {% endif %}
+
+  <div class="banner-text-box col-auto">
     <div class="banner-text">
       {% if lang == "eng" %}
         <h1>I'm Kayko Ohkawa</h1>
@@ -154,9 +159,9 @@
             <p>{{p}}</p>
           {% endfor %}
           {% if lang == "eng" %}
-            <p>More samples can be found in the <a href="http://halfriver.me/art/">art section</a></p>
+            <p>More samples can be found in the <a href="/art">art section</a></p>
           {% elif lang == "jpn" %}
-            <p>作品のサンプルは、<a href="http://halfriver.me/art/">アートセクション</a>で見ることができます。</p>
+            <p>作品のサンプルは、<a href="/art">アートセクション</a>で見ることができます。</p>
           {% endif %}
 
         </div>

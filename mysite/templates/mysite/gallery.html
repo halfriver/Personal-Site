@@ -13,10 +13,15 @@
 {% block nav-art %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container medium-banner row">
-  <!-- <img class="banner medium-banner" src="{% static 'media/banner_test.png' %}"> -->
-  <div class="banner-text-box col-12">
-    <div class="banner-text ">
+<div class="banner-container medium-banner row justify-content-center">
+  {% if darkmode == "dark" %}
+    <img class="banner large-banner" src="{% static 'media/header_dark.PNG' %}">
+  {% else %}
+    <img class="banner large-banner" src="{% static 'media/header_light.PNG' %}">
+  {% endif %}
+
+  <div class="banner-text-box col-auto">
+    <div class="banner-text">
       {% if lang == "eng" %}
         <h1>Art Portfolio</h1>
       {% elif lang == "jpn" %}

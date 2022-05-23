@@ -18,10 +18,14 @@
 {% block nav-programming %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container small-banner row">
-  <!-- <img class="banner small-banner" src="{s% static 'media/banner_test.png' %}"> -->
-  <div class="banner-text-box col-12">
-    <div class="banner-text ">
+<div class="banner-container medium-banner row justify-content-center">
+  {% if darkmode == "dark" %}
+    <img class="banner large-banner" src="{% static 'media/header_dark.PNG' %}">
+  {% else %}
+    <img class="banner large-banner" src="{% static 'media/header_light.PNG' %}">
+  {% endif %}
+  <div class="banner-text-box col-auto">
+    <div class="banner-text">
       {% if lang == "eng" %}
         <h1>Programming</h1>
       {% elif lang == "jpn" %}
