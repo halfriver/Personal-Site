@@ -129,3 +129,14 @@ input:checked + .slider {
 .foot {
   color: rgba(201, 211, 216, 0.55);
 }
+
+/* resume */
+.download-button {
+  /* border: 2px solid rgba(201, 211, 216, 0.55); */
+  background-color: rgba(201, 211, 216, 0.75);
+  color: rgba(31, 55, 68, 1);
+}
+.download-button:hover {
+  background-color: rgba(186, 143, 11, 1);
+  color: rgba(31, 55, 68, 1);
+}

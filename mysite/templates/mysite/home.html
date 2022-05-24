@@ -41,7 +41,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-10 section-head">
       {% if lang == "eng" %}
-        <h4>About</h4>
+        <h4>about</h4>
       {% elif lang == "jpn" %}
         <h4>はじめに</h4>
       {% endif %}
@@ -71,12 +71,11 @@
     <div class="col-1 divider-dot-right"></div>
   </div>
 
-
   <!-- Section: Hobbies -->
   <div class="row justify-content-center">
     <div class="col-lg-10 section-head">
       {% if lang == "eng" %}
-        <h4>Hobbies</h4>
+        <h4>hobbies</h4>
       {% elif lang == "jpn" %}
         <h4>趣味</h4>
       {% endif %}
@@ -92,7 +91,7 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col section-hollow">
+    <div class="col-12 section-hollow">
       <div id="hobby-collection" class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
           <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="<span class='hobby-tooltip'>{% if lang == "eng" %}Dixie National Forest{% elif lang == "jpn" %}ユタ州{% endif %}</span>">
@@ -109,6 +108,37 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+    <div class="col section-hollow d-flex align-center">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg subsection-hollow">
+          <div class="section-head">
+            {% if lang == "eng" %}
+              <h4>art</h4>
+            {% elif lang == "jpn" %}
+              <h4>アート</h4>
+            {% endif %}
+          </div>
+          {% for p in home.Art %}
+            <p>{{p}}</p>
+          {% endfor %}
+          {% if lang == "eng" %}
+            <p>More samples can be found in the <a href="/art">art section</a></p>
+          {% elif lang == "jpn" %}
+            <p>作品のサンプルは、<a href="/art">アートセクション</a>で見ることができます。</p>
+          {% endif %}
+        </div>
+        <div class="col-auto col-lg-4 art-stack subsection-hollow">
+          <div class="pic-bottom">
+            <img class="art-pic" src="{% static 'media/Mosa.png' %}">
+          </div>
+          <div class="pic-top">
+            <img class="art-pic" src="{% static 'media/defaultfish.png' %}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Divider -->
   <div class="row justify-content-center">
     <div class="col-1 divider-dot-left"></div>
@@ -120,7 +150,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-10 section-head">
       {% if lang == "eng" %}
-        <h4>Programming</h4>
+        <h4>programming</h4>
       {% elif lang == "jpn" %}
         <h4>プログラミング</h4>
       {% endif %}
@@ -141,52 +171,53 @@
   </div>
 
   <!-- Section: Art -->
-  <div class="row justify-content-center">
-    <div class="col-lg-10 section-head">
-      {% if lang == "eng" %}
-        <h4>Art</h4>
-      {% elif lang == "jpn" %}
-        <h4>アート</h4>
-      {% endif %}
+  <div class="d-none">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 section-head">
+        {% if lang == "eng" %}
+          <h4>art</h4>
+        {% elif lang == "jpn" %}
+          <h4>アート</h4>
+        {% endif %}
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col section-hollow d-flex align-center">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-lg subsection-hollow">
-          {% for p in home.Art %}
-            <p>{{p}}</p>
-          {% endfor %}
-          {% if lang == "eng" %}
-            <p>More samples can be found in the <a href="/art">art section</a></p>
-          {% elif lang == "jpn" %}
-            <p>作品のサンプルは、<a href="/art">アートセクション</a>で見ることができます。</p>
-          {% endif %}
-
-        </div>
-        <div class="col-auto col-lg-4 art-stack subsection-hollow">
-          <div class="pic-bottom">
-            <img class="art-pic" src="{% static 'media/Mosa.png' %}">
+    <div class="row justify-content-center">
+      <div class="col section-hollow d-flex align-center">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg subsection-hollow">
+            {% for p in home.Art %}
+              <p>{{p}}</p>
+            {% endfor %}
+            {% if lang == "eng" %}
+              <p>More samples can be found in the <a href="/art">art section</a></p>
+            {% elif lang == "jpn" %}
+              <p>作品のサンプルは、<a href="/art">アートセクション</a>で見ることができます。</p>
+            {% endif %}
           </div>
-          <div class="pic-top">
-            <img class="art-pic" src="{% static 'media/defaultfish.png' %}">
+          <div class="col-auto col-lg-4 art-stack subsection-hollow">
+            <div class="pic-bottom">
+              <img class="art-pic" src="{% static 'media/Mosa.png' %}">
+            </div>
+            <div class="pic-top">
+              <img class="art-pic" src="{% static 'media/defaultfish.png' %}">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Divider -->
-  <div class="row justify-content-center">
-    <div class="col-1 divider-dot-left"></div>
-    <div class="col-3 divider"></div>
-    <div class="col-1 divider-dot-right"></div>
+    <!-- Divider -->
+    <div class="row justify-content-center">
+      <div class="col-1 divider-dot-left"></div>
+      <div class="col-3 divider"></div>
+      <div class="col-1 divider-dot-right"></div>
+    </div>
   </div>
 
   <!-- Section: Contact -->
   <div class="row justify-content-center">
     <div class="col-lg-10 section-head">
       {% if lang == "eng" %}
-        <h4>Contact</h4>
+        <h4>contact</h4>
       {% elif lang == "jpn" %}
         <h4>連絡先</h4>
       {% endif %}

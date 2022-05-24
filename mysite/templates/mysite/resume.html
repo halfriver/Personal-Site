@@ -27,11 +27,131 @@
 {% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
+
+<div class="container">
+  <!-- Top Spacer -->
+  <div class="row" style="height: 2rem;"></div>
+
+  <!-- resume download and purpose statement -->
+  <div class="row justify-content-center section">
+    <div class="col-12 col-lg subsection">
+      <p>statement<p>
+    </div>
+    <div class="col-auto subsection">
+      <div class="row justify-content-center">
+        <div class="col">
+          <a href="{% static 'files/OhkawaResume.pdf' %}" class="download-button" title="Download PDF" download>
+            {% if lang == "eng" %}
+              Download Resume PDF
+            {% elif lang == "jpn" %}
+              履歴書PDFダウンロード
+            {% endif %}
+          </a>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col download-updated">
+          {% if lang == "eng" %}
+            last updated:
+          {% elif lang == "jpn" %}
+            最終更新日: 
+          {% endif %}
+          2022-05-24
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- Skills -->
+  <div class="row justify-content-center section-hollow">
+    <div class="col-12 col-lg-3">
+      <div class="section-head">
+        <h4>skills & projects</h4>
+      </div>
+    </div>
+    <div class="col-12 col-lg">
+      <div class="subsection">
+        skills & projects
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- education -->
+  <div class="row justify-content-center section">
+    <div class="col-12 col-lg-3">
+      <div class="section-head">
+        <h4>education</h4>
+      </div>
+    </div>
+    <div class="col-12 col-lg">
+      <div class="subsection">
+        education
+      </div>
+    </div>
+  </div>
+  <!-- awards/distinctions/extracurricular things -->
+  <div class="row justify-content-center section">
+    <div class="col-12 col-lg-3">
+      <div class="section-head">
+        <h4>awards</h4>
+      </div>
+    </div>
+    <div class="col-12 col-lg">
+      <div class="subsection">
+        awards
+      </div>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- job experience (timeline) -->
+  <div class="row justify-content-center section-hollow">
+    <div class="col-12 col-lg-3">
+      <div class="section-head">
+        <h4>job experience</h4>
+      </div>
+    </div>
+    <div class="col-12 col-lg">
+      <div class="subsection">
+        jobs
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Spacer -->
+  <div class="row" style="height: 4rem;"></div>
+</div>
+
+<div class="d-none row justify-content-center">
   <div class="construction col-6">
     <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
   </div>
 </div>
+
+
+
+
+
+
+
+
 <div class="container d-none">
   <div class="row">
     <div class="col section-head">
@@ -51,7 +171,7 @@
         Download Resume PDF
       </a>
     </div>
-    <div class="col-12 col-lg-4" hidden>
+    <div class="col-12 col-lg-4">
       <a href="{% static 'files/OhkawaCV.pdf' %}" class="download-button" title="Download PDF" download>
         Download CV PDF
       </a>

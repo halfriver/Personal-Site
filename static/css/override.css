@@ -395,7 +395,7 @@ input:checked + .slider:before {
 /* darkmode toggle end */
 
 
-.btn-custom {
+/* .btn-custom {
   background-color: #0a483b;
   border-color: #0a483b;
   color: #e3e3da;
@@ -419,7 +419,7 @@ input:checked + .slider:before {
 
 #search {
   align-items: right;
-}
+} */
 
 .contact-box {
   padding: 0.5rem;

@@ -1,25 +1,22 @@
-.download-bar {
-  padding: 10px;
-}
-
 .download-button {
   display: flex;
-  height: 120px;
-  width: 80%;
-  margin: 5px auto 10px auto;
-  border-radius: 15px;
-  border: 2px solid #0a483b;
-  background-color: rgba(0, 0, 0, 0);
-  color: #0a483b;
+  margin: 5px auto;
+  padding: 1rem;
+  border-radius: 10px;
   font-size: 1.1rem;
-  cursor: pointer;
   align-items: center;
+  text-align: center;
   justify-content: center;
 }
+.download-updated {
+  text-align: right;
+  text-indent: 10px;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
 
-.download-button:hover {
-  background-color: #0a483b;
-  color: #e3e3da;
+.section-hollow {
+  padding: 1rem 1.5rem;
 }
 
 ul {

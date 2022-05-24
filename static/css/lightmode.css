@@ -25,14 +25,13 @@ White: rgba(240, 243, 245, 1);
 }
 
 body {
-  color:  rgba(38, 40, 41, 1);
+  color: rgba(38, 40, 41, 1);
   background-color: rgba(177, 193, 201, 1);
 }
 
 a {
   color: rgba(54, 96, 117, 0.85);
 }
-
 a:hover {
   color: rgba(43, 80, 99, 1);
 }
@@ -124,4 +123,15 @@ input:checked + .slider {
 
 .foot {
   color: rgba(43, 80, 99, 1);
+}
+
+/* resume */
+.download-button {
+  /* border: 2px solid rgba(201, 211, 216, 0.55); */
+  background-color: rgba(54, 96, 117, 0.85);
+  color: rgba(238, 243, 245, 1);
+}
+.download-button:hover {
+  background-color: rgba(43, 80, 99, 1);
+  color: rgba(238, 243, 245, 1);
 }
