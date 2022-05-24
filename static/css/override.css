@@ -204,6 +204,10 @@ fg {
   margin: auto;
 }
 
+.foot-banner {
+  height: 350px;
+}
+
 #avatar {
   border-radius: 50%;
   max-height: 400px;
@@ -294,7 +298,12 @@ fg {
   max-width: 250px;
   max-height: 250px;
   width: 100%;
-  transition: transform .2s;
+}
+.art-pic:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.45);
+  transition: transform 0.5s;
+  z-index: 1 !important;
 }
 .pic-bottom {
   grid-column: 5 / span 6;
@@ -304,7 +313,7 @@ fg {
   grid-row: 1;
   grid-column: 1 / span 6;
   padding-top: 30%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .foot {
