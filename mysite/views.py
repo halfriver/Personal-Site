@@ -7,6 +7,7 @@ from django.templatetags.static import static
 from random import choice
 from .settings import BASE_DIR
 import os
+import time
 
 class Index(TemplateView):
     template_name = 'home.html'
@@ -20,11 +21,11 @@ class Index(TemplateView):
         if context["lang"] == "eng":
             context["home"] = home_eng
             context["art"] = art_eng
-            context["cv"] = cv_eng
+            context["resume"] = resume_eng
         elif context["lang"] == "jpn":
             context["home"] = home_jpn
             context["art"] = art_jpn
-            context["cv"] = cv_jpn
+            context["resume"] = resume_jpn
 
         return context
 
@@ -77,6 +78,12 @@ class MainResume(TemplateView):
             self.request.session['lang'] = 'eng'
         context["lang"] = self.request.session.get('lang')
         context["darkmode"] = self.request.session.get('darkmode')
+        if context["lang"] == "eng":
+            context["resume"] = resume_eng
+        elif context["lang"] == "jpn":
+            context["resume"] = resume_jpn
+
+        context["modtime"] = time.strftime('%Y-%m-%d', time.localtime(os.path.getmtime(BASE_DIR + "/static/files/OhkawaResume.pdf")))
 
         return context
 

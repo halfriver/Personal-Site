@@ -19,6 +19,9 @@
   .hobby-section {
     column-count: 1;
   }
+  .download-updated {
+    text-align: center !important;
+  }
   /* .col-auto {
     width: 50%;
   } */

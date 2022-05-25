@@ -35,7 +35,11 @@
   <!-- resume download and purpose statement -->
   <div class="row justify-content-center section">
     <div class="col-12 col-lg subsection">
-      <p>statement<p>
+      {% for p in resume.Statement %}
+        {% for x in p %}
+          <p>{{ x }}<p>
+        {% endfor %}
+      {% endfor %}
     </div>
     <div class="col-auto subsection">
       <div class="row justify-content-center">
@@ -54,9 +58,9 @@
           {% if lang == "eng" %}
             last updated:
           {% elif lang == "jpn" %}
-            最終更新日: 
+            最終更新日:
           {% endif %}
-          2022-05-24
+          {{ modtime }}
         </div>
       </div>
     </div>
@@ -78,6 +82,9 @@
     <div class="col-12 col-lg">
       <div class="subsection">
         skills & projects
+        {% for x in resume.Skills %}
+          {{x.0}}
+        {% endfor %}
       </div>
     </div>
   </div>
