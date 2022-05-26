@@ -135,3 +135,14 @@ input:checked + .slider {
   background-color: rgba(43, 80, 99, 1);
   color: rgba(238, 243, 245, 1);
 }
+
+.subsection-head {
+  color: rgba(54, 96, 117, 1);
+}
+
+.progress {
+  background-color: rgba(238, 243, 245, 0.75);
+}
+.progress-bar {
+  background-color: rgba(54, 96, 117, 1);
+}
