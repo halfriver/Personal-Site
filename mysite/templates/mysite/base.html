@@ -144,11 +144,7 @@
     </div>
 
     <div class="banner-container foot-banner row justify-content-center">
-      {% if darkmode == "dark" %}
-        <img class="banner foot-banner" src="{% static 'media/footer_dark.png' %}">
-      {% else %}
-        <img class="banner foot-banner" src="{% static 'media/footer_light.png' %}">
-      {% endif %}
+      <img class="banner foot-banner" src="{% if darkmode == "dark" %}{% static 'media/footer_dark.png' %}{% else %}{% static 'media/footer_light.png' %}{% endif %}">
     </div>
   </body>
 </html>
