@@ -56,7 +56,7 @@
         <div class="align-items-start">
           <div class="nav navbar-dark navbar-expand-lg flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-tab active" id="nav-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
-            <a class="nav-tab" id="nav-demo-tab" data-toggle="tab" href="#show-demo" role="tab" aria-controls="show-demo" aria-selected="false">Interactive Demos</span>
+            <a class="nav-tab" id="nav-demo-tab" data-toggle="tab" href="#show-demo" role="tab" aria-controls="show-demo" aria-selected="false">Interactive Demos</a>
             {% for i in programs %}
               {% if i.demo %}
               <a class="sub nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#show-{{i|cut:" "}}" role="tab" aria-controls="show-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
