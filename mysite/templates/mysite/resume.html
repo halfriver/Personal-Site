@@ -9,18 +9,14 @@
 
 {% block banner %}
 <div class="banner-container medium-banner row justify-content-center">
-  {% if darkmode == "dark" %}
-    <img class="banner large-banner" src="{% static 'media/header_dark.png' %}">
-  {% else %}
-    <img class="banner large-banner" src="{% static 'media/header_light.png' %}">
-  {% endif %}
+  <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
   <div class="banner-text-box col-auto">
     <div class="banner-text">
-      {% if lang == "eng" %}
-        <h1>Resume</h1>
-      {% elif lang == "jpn" %}
-        <h1>履歴書</h1>
-      {% endif %}
+    {% if lang == "eng" %}
+      <h1>Resume</h1>
+    {% elif lang == "jpn" %}
+      <h1>履歴書</h1>
+    {% endif %}
     </div>
   </div>
 </div>
@@ -35,31 +31,31 @@
   <!-- resume download and purpose statement -->
   <div class="row justify-content-center section">
     <div class="col-12 col-lg subsection">
-      {% for p in resume.Statement %}
-        {% for x in p %}
-          <p>{{ x }}<p>
-        {% endfor %}
+    {% for p in resume.Statement %}
+      {% for x in p %}
+        <p>{{ x }}<p>
       {% endfor %}
+    {% endfor %}
     </div>
     <div class="col-auto subsection">
       <div class="row justify-content-center d-flex">
         <div class="col">
           <a href="{% static 'files/OhkawaResume.pdf' %}" class="download-button" title="Download PDF" download>
-            {% if lang == "eng" %}
-              Download Resume PDF
-            {% elif lang == "jpn" %}
-              履歴書PDFダウンロード
-            {% endif %}
+          {% if lang == "eng" %}
+            Download Resume PDF
+          {% elif lang == "jpn" %}
+            履歴書PDFダウンロード
+          {% endif %}
           </a>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col download-updated">
-          {% if lang == "eng" %}
-            last updated:
-          {% elif lang == "jpn" %}
-            最終更新日:
-          {% endif %}
+        {% if lang == "eng" %}
+          last updated:
+        {% elif lang == "jpn" %}
+          最終更新日:
+        {% endif %}
           {{ modtime }}
         </div>
       </div>
@@ -76,21 +72,21 @@
   <div class="row justify-content-center section-hollow">
     <div class="col-12 col-lg-3">
       <div class="section-head">
-        {% if lang == "eng" %}
-          <h4>skills & projects</h4>
-        {% elif lang == "jpn" %}
-          <h4>技術・プロジェクト</h4>
-        {% endif %}
+      {% if lang == "eng" %}
+        <h4>skills & projects</h4>
+      {% elif lang == "jpn" %}
+        <h4>技術・プロジェクト</h4>
+      {% endif %}
       </div>
     </div>
     <div class="col-12 col-lg">
       <div class="row subsection">
         <div class="col-12 subsection-head">
-          {% if lang == "eng" %}
-            Languages
-          {% elif lang == "jpn" %}
-            言語
-          {% endif %}
+        {% if lang == "eng" %}
+          Languages
+        {% elif lang == "jpn" %}
+          言語
+        {% endif %}
         </div>
         {% for x in resume.ProLang %}
         <div class="row m-2">
@@ -134,33 +130,21 @@
       </div>
     </div>
     <div class="col-12 col-lg">
+      {% for x in resume.Education %}
       <div class="row subsection">
+        <div class="col-12 d-block d-md-none emphasis">{{x.3}}</div>
         <div class="col-auto">
-          <span style="font-size: 1.25rem; font-weight: 500;">Master of Science</span>, Quantitative Economics
-          <p><i>University of Pittsburgh</i></p>
+          <span class="emphasis">{{x.0}}</span><span class="d-none d-md-inline">, </span><span class="indent d-block d-md-inline">{{x.1}}</span>
+          <div class="location">{{x.2}}</div>
         </div>
-        <div class="col text-end">
-          2021
+        <div class="d-none d-md-block col text-end">
+          {{x.3}}
+        </div>
+        <div class="col-12 m-2" style="line-height: 2rem;">
+          {{x.4 |safe}}
         </div>
       </div>
-      <div class="row subsection">
-        <div class="col-auto">
-          <span style="font-size: 1.25rem; font-weight: 500;">Bachelor of Science</span>, Geology
-          <p><i>University of Pittsburgh</i></p>
-        </div>
-        <div class="col text-end">
-          2017
-        </div>
-      </div>
-      <div class="row subsection">
-        <div class="col-auto">
-          <span style="font-size: 1.25rem; font-weight: 500;">Bachelor of Arts</span>, Economics
-          <p><i>University of Pittsburgh</i></p>
-        </div>
-        <div class="col text-end">
-          2017
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
   <!-- awards/distinctions/extracurricular things -->
@@ -197,16 +181,23 @@
     </div>
     <div class="col-12 col-lg">
       <div class="timeline">
+        {% for x in resume.Jobs %}
+        {% if forloop.first %}
+        <!-- Spacer -->
+        <div class="row" style="height: 2rem;"></div>
+        {% endif %}
         <div class="time-container">
-          <div class="section timesect">
-            job1
+          <div class="row section timesect">
+            <div class="col">
+              <span class="emphasis">{{x.0}}</span><span class="d-none d-md-inline">, </span><span class="indent d-block d-md-inline">{{x.1}}</span>
+              <div class="location">{{x.2}}</div>
+            </div>
+            <div class="col-12 m-2" style="line-height: 2rem;">
+              {{x.3 |safe}}
+            </div>
           </div>
         </div>
-        <div class="time-container">
-          <div class="section timesect">
-            job2
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

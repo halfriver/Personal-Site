@@ -146,3 +146,7 @@ input:checked + .slider {
 .progress-bar {
   background-color: rgba(54, 96, 117, 1);
 }
+
+.emphasis {
+  color: rgba(54, 96, 117, 1);
+}
