@@ -9,7 +9,7 @@ home_jpn = {x:[p for p in open(settings.BASE_DIR + "/static/files/content/jpn/ho
 art_eng = {}
 art_jpn = {}
 
-resume_headers = ['Statement','Skills','ProLang','Education','Awards','Jobs']
+resume_headers = ['Statement','Skills','ProLang','Projects','Education','Awards','Jobs']
 
 resume_eng = {x:[p.split("@") for p in open(settings.BASE_DIR + "/static/files/content/eng/resume/" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in resume_headers}
 resume_jpn = {x:[p.split("@") for p in open(settings.BASE_DIR + "/static/files/content/jpn/resume/" + x + ".txt", "r", encoding='utf-8').read().split("\n")] for x in resume_headers}
