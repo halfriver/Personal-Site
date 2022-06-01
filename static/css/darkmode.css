@@ -162,10 +162,10 @@ input:checked + .slider {
   border: 4px solid rgba(186, 143, 11, 1);
 }
 /* Add arrows to the right container (pointing left) */
-.time-container::after {
+/* .time-container::after {
   border: medium solid rgba(31, 55, 68, 1);
   border-color: transparent rgba(31, 55, 68, 1) transparent transparent;
-}
+} */
 
 .emphasis {
   color: rgba(186, 143, 11, 1);
