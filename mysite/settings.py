@@ -147,3 +147,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
 
 USE_DEPRECATED_PYTZ = False
+
+EMAIL_HOSTS = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kayko.ohkawa@gmail.com'
+EMAIL_HOST_PASSWORD = 'downDown12()'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

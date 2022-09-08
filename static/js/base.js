@@ -140,7 +140,7 @@ $(document).ready(function() {
   });
 
   function update_session(darkmode, lang) {
-    console.log(darkmode, lang);
+    // console.log(darkmode, lang);
     $.ajax('/update_session/',
         {
           data: {
@@ -152,7 +152,7 @@ $(document).ready(function() {
         }
       )
       .done(function(data) {
-        console.log("Done");
+        // console.log("Done");
         setTimeout(function() {location.reload()}, 500);
       })
       .fail(function(xhr, errmsg, err) {

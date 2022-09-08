@@ -6,7 +6,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
 {% endblock styles %}
 
-{% block scripts %}{% endblock scripts %}
+{% block scripts %}
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock scripts %}
 
 {% block title %} | Contact{% endblock %}
 {% block nav-contact %}active{% endblock %}
@@ -27,14 +29,80 @@
 {% endblock %}
 
 {% block content %}
-
-<!-- Top Spacer -->
-<div class="row" style="height: 2rem;"></div>
-
-<div class="row justify-content-center">
+<div class="d-none row justify-content-center">
   <div class="construction col-6">
     <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
   </div>
+</div>
+
+<div class="container">
+  <!-- Top Spacer -->
+  <div class="row" style="height: 2rem;"></div>
+
+  <!-- Content -->
+  <div class="row justify-content-center m-1">
+    <div class="col-12 col-md-6 section text-center">
+      <div class="subsection">
+      {% for x in contact.Contact %}
+        {{x}}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="row justify-content-center">
+    <div class="col-auto d-flex">
+      <ul class="m-0 p-0">
+        <li class="d-inline">
+          <a class="p-3 contact-link" href="https://github.com/halfriver" target="_blank">
+            <i class="bi bi-github contact-link"></i>
+          </a>
+        </li>
+        <li class="d-inline">
+          <a class="p-3 contact-link" href="https://www.linkedin.com/in/ohkawak/" target="_blank">
+            <i class="bi bi-linkedin contact-link"></i>
+          </a>
+        </li>
+        <li class="d-inline">
+          <a class="p-3 contact-link" href="mailto:&#107;&#097;&#121;&#107;&#111;&#046;&#111;&#104;&#107;&#097;&#119;&#097;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;" target="_blank">
+            <i class="bi bi-envelope-fill contact-link"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Divider -->
+  <div class="row justify-content-center">
+    <div class="col-1 divider-dot-left"></div>
+    <div class="col-3 divider"></div>
+    <div class="col-1 divider-dot-right"></div>
+  </div>
+
+  <!-- Under Construction -->
+  <div class="row justify-content-center">
+    <div class="construction col-6">
+      <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+    </div>
+  </div>
+
+
+  <!-- Contact Form -->
+  <div class="row justify-content-center d-none">
+    <div class="col-lg-10 section-head">
+    {% if lang == "eng" %}
+      <h4>contact</h4>
+    {% elif lang == "jpn" %}
+      <h4>連絡先</h4>
+    {% endif %}
+    </div>
+  </div>
+  <div class="row justify-content-center d-none">
+    <button id="email-test" type="button" class="btn btn-primary">Email Test</button>
+  </div>
+
+  <!-- Bottom Spacer -->
+  <div class="row" style="height: 4rem;"></div>
 </div>
 
 <div class="container d-none">
@@ -52,6 +120,5 @@
   <div class="row justify-content-center">
     <div class="col-4 divider"></div>
   </div>
-
 </div>
 {% endblock %}

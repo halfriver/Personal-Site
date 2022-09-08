@@ -4,6 +4,9 @@ from django.http import HttpResponseNotAllowed, HttpResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from .models import ArtPiece, ArtTag, Program
 from django.templatetags.static import static
+from django.core.mail import send_mail
+from django.core import mail
+from .secrets import EMAIL
 from random import choice
 from .settings import BASE_DIR
 import os
@@ -20,12 +23,8 @@ class Index(TemplateView):
         context["darkmode"] = self.request.session.get('darkmode')
         if context["lang"] == "eng":
             context["home"] = home_eng
-            context["art"] = art_eng
-            context["resume"] = resume_eng
         elif context["lang"] == "jpn":
             context["home"] = home_jpn
-            context["art"] = art_jpn
-            context["resume"] = resume_jpn
 
         return context
 
@@ -65,8 +64,25 @@ class MainContact(TemplateView):
             self.request.session['lang'] = 'eng'
         context["lang"] = self.request.session.get('lang')
         context["darkmode"] = self.request.session.get('darkmode')
-
+        if context["lang"] == "eng":
+            context["contact"] = contact_eng
+        elif context["lang"] == "jpn":
+            context["contact"] = contact_jpn
         return context
+
+def gen_email(request):
+    # send_mail(
+    #     'Test Subject',
+    #     request.POST.get('message'),
+    #     'from@example.com',
+    #     [EMAIL]
+    # )
+    with mail.get_connection() as connection:
+        mail.EmailMessage(
+            'Test Subject', request.POST.get('message'), 'from@example.com', [EMAIL],
+            connection=connection,
+        ).send()
+    return HttpResponse('ok')
 
 
 class MainResume(TemplateView):
