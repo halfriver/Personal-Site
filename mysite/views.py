@@ -6,7 +6,7 @@ from .models import ArtPiece, ArtTag, Program
 from django.templatetags.static import static
 from django.core.mail import send_mail
 from django.core import mail
-from .secrets import EMAIL
+# from .secrets import EMAIL
 from random import choice
 from .settings import BASE_DIR
 import os
