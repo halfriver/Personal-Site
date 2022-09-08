@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% load static %}
 
@@ -29,11 +28,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="d-none row justify-content-center">
-  <div class="construction col-6">
-    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
-  </div>
-</div>
 
 <div class="container">
   <!-- Top Spacer -->
@@ -82,7 +76,7 @@
   <!-- Under Construction -->
   <div class="row justify-content-center">
     <div class="construction col-6">
-      <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i><h3>
+      <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i></h3>
     </div>
   </div>
 
