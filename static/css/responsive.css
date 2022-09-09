@@ -6,12 +6,9 @@
   #logo {
     margin-left: 20px;
   }
-  /* .col-auto {
-    width: 50%;
-  } */
-  /* .section-body p {
-    text-indent: 25px;
-  } */
+  .carousel {
+    max-width: 720px;
+  }
 }
 
 /* For medium and smaller responsiveness */
@@ -22,12 +19,9 @@
   .download-updated {
     text-align: center !important;
   }
-  /* .col-auto {
-    width: 50%;
-  } */
-  /* .section-body p {
-    text-indent: 25px;
-  } */
+  .carousel {
+    max-width: 960px;
+  }
 }
 
 /* For large and smaller styles */

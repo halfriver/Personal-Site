@@ -175,7 +175,6 @@ fg {
 .banner-container {
   --bs-gutter-x: 0;
   width: 100%;
-  /* background-image: linear-gradient(to right, #5f7a87, #0d171c); */
 }
 
 .large-banner {

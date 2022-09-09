@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/art.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 {% endblock styles %}
 
@@ -14,7 +14,46 @@
 {% block banner %}
 <div class="banner-container medium-banner row justify-content-center">
   <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
-  <div class="banner-text-box col-auto">
+
+  <!-- Banner Carousel -->
+  <div id="art-carousel" class="container carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-text-box">
+      <div class="carousel-text">
+        {% if lang == "eng" %}
+          <h1>Art Portfolio</h1>
+        {% elif lang == "jpn" %}
+          <h1>アート</h1>
+        {% endif %}
+      </div>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="7500">
+        <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art">
+        <!-- <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art d-block"></div> -->
+      </div>
+      <div class="carousel-item" data-bs-interval="7500">
+        <img src="{% static 'media/art/Mosa.png' %}" class="carousel-art">
+      </div>
+      <div class="carousel-item" data-bs-interval="7500">
+        <img src="{% static 'media/art/Serilon.png' %}" class="carousel-art">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#art-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="d-none banner-text-box col-auto">
     <div class="banner-text">
       {% if lang == "eng" %}
         <h1>Art Portfolio</h1>
@@ -23,7 +62,10 @@
       {% endif %}
     </div>
   </div>
-</div>
+
+
+
+<!-- Banner Carousel -->
 <!-- <div id="artCarousel" class="carousel slide large-banner-container" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#artCarousel" data-slide-to="0" class="active"></li>
@@ -58,6 +100,8 @@
     <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i></h3>
   </div>
 </div>
+
+
 <div class="container gallery d-none">
   <div class="tab-bar">
     <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">

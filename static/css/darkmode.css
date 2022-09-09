@@ -12,6 +12,10 @@ Black: rgba(31, 32, 33, 1);
 White: rgba(201, 211, 216, 1);
 */
 
+::selection {
+  background: rgba(186, 143, 11, 1);
+  color: rgba(201, 211, 216, 1);
+}
 
 ::-webkit-scrollbar-track {
    background: rgba(22, 42, 52, 0);
@@ -70,6 +74,14 @@ nav {
 .banner-text {
   color: rgba(240, 243, 245, 1);
   background-color: rgba(31, 55, 68, 0.9);
+}
+
+.carousel-text {
+  color: rgba(240, 243, 245, 1);
+}
+
+#art-carousel {
+  background-color: rgba(27, 50, 62, 0.75);
 }
 
 .section-head {
