@@ -93,7 +93,7 @@ $(document).ready(function() {
     }
   }
 
-  // when Japanese is selected, swap language on
+  // when Japanese is selected, swap language on navbar titles
   $('.lang-display').parent().hover(function() {
     $(this).find('.jpn-display').removeClass('d-none');
     $(this).find('.eng-display').addClass('d-none');
@@ -108,7 +108,7 @@ $(document).ready(function() {
     // if language is already set to English, do nothing;
     // else: refresh page and update session
     if (sessionStorage.lang == "eng") {
-      return
+      return;
     }
     sessionStorage.lang = "eng";
     update_session($("#darkmode")[0].checked, "eng");
@@ -119,7 +119,7 @@ $(document).ready(function() {
     // if language is already set to Japanese, do nothing;
     // else: refresh page and update session
     if (sessionStorage.lang == "jpn") {
-      return
+      return;
     }
     // update front-end
     sessionStorage.lang = "jpn";
@@ -164,7 +164,7 @@ $(document).ready(function() {
   // initialize tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
+    return new bootstrap.Tooltip(tooltipTriggerEl);
   })
 
   // update footer copyright year
