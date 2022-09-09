@@ -12,17 +12,15 @@
 {% block nav-art %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container medium-banner row justify-content-center">
+<div class="banner-container large-banner row justify-content-center">
   <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
-
-  <!-- Banner Carousel -->
   <div id="art-carousel" class="container carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-text-box">
-      <div class="carousel-text">
+    <div class="d-none carousel-text-box">
+      <div class="banner-text">
         {% if lang == "eng" %}
-          <h1>Art Portfolio</h1>
+          <h2>Art Portfolio</h2>
         {% elif lang == "jpn" %}
-          <h1>アート</h1>
+          <h2>アート</h2>
         {% endif %}
       </div>
     </div>
@@ -43,64 +41,80 @@
         <img src="{% static 'media/art/Serilon.png' %}" class="carousel-art">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
+    <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#art-carousel" data-bs-slide="next">
+    <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+</div>
 
-  <div class="d-none banner-text-box col-auto">
-    <div class="banner-text">
-      {% if lang == "eng" %}
-        <h1>Art Portfolio</h1>
-      {% elif lang == "jpn" %}
-        <h1>アート</h1>
-      {% endif %}
+<!-- Banner Carousel V1 -->
+<div class="d-none banner-container large-banner row justify-content-center">
+  <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
+  <div id="art-carousel" class="container carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide carousel-fade" data-bs-ride="carousel">
+    <div class="d-none carousel-text-box">
+      <div class="banner-text">
+        {% if lang == "eng" %}
+          <h2>Art Portfolio</h2>
+        {% elif lang == "jpn" %}
+          <h2>アート</h2>
+        {% endif %}
+      </div>
     </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="7500">
+        <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art">
+        <!-- <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art d-block"></div> -->
+      </div>
+      <div class="carousel-item" data-bs-interval="7500">
+        <img src="{% static 'media/art/Mosa.png' %}" class="carousel-art">
+      </div>
+      <div class="carousel-item" data-bs-interval="7500">
+        <img src="{% static 'media/art/Serilon.png' %}" class="carousel-art">
+      </div>
+    </div>
+    <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-
-
-
-<!-- Banner Carousel -->
-<!-- <div id="artCarousel" class="carousel slide large-banner-container" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#artCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#artCarousel" data-slide-to="1"></li>
-    <li data-target="#artCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="large-banner" src="{% get_media_prefix %}img/CyborgBalloon_Banner_2560x1440.png" alt="Banner 1">
-    </div>
-    <div class="carousel-item">
-      <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Banner 2">
-    </div>
-    <div class="carousel-item">
-      <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Banner 3">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#artCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#artCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> -->
+</div>
 {% endblock %}
 
 {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="banner-text">
+        {% if lang == "eng" %}
+          <h1>Art Portfolio</h1>
+        {% elif lang == "jpn" %}
+          <h1>アート</h1>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="row justify-content-center">
   <div class="construction col-6">
     <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i></h3>
   </div>
 </div>
-
 
 <div class="container gallery d-none">
   <div class="tab-bar">

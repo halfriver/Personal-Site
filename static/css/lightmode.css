@@ -75,7 +75,15 @@ nav {
 }
 
 #art-carousel {
-  background-color: rgba(208, 219, 225, 0.75);
+  background-color: rgba(222, 230, 234, 0.9);
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: rgba(222, 230, 234, 1);
+}
+
+.carousel-art {
+  border-bottom: 3px solid rgba(54, 96, 117, 0.5);
 }
 
 .section-head {
