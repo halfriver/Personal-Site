@@ -153,7 +153,7 @@ a {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-.close {
+/* .close {
   color: #787878;
   position: absolute;
   top: 10px;
@@ -167,7 +167,7 @@ a {
   color: #2e2e2e;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 .modal-con {
   width: 100%;

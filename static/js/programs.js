@@ -2,7 +2,7 @@ $(document).ready(function() {
   function openModal(program) {
     $("#modal-" + program).css('display', 'block');
     $('body').css("overflow-y","hidden");
-    $(".scrollable").floatingScroll("update");
+    // $(".scrollable").floatingScroll("update");
   }
 
   function closeModal() {
@@ -43,10 +43,10 @@ $(document).ready(function() {
   $('.modal-content').css('max-height', modalHeight);
   $('.card-body').css('max-height', modalHeight*0.6);
 
-  $(".scrollable").floatingScroll();
+  // $(".scrollable").floatingScroll();
   $('.card-header').click(function() {
     // console.log( $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable") );
     // $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable").floatingScroll("update");
-    $(".scrollable").floatingScroll("update");
+    // $(".scrollable").floatingScroll("update");
   });
 });
