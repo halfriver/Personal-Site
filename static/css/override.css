@@ -164,6 +164,29 @@ fg {
   font-size: 1.6rem;
 }
 
+.bi-x {
+  font-size: 1.15rem;
+}
+
+#email-alert {
+  z-index: 2;
+  position: fixed;
+  right: 10px;
+  top: 80px;
+  padding: 1rem;
+}
+
+.bi-clipboard-check {
+  font-size: 1rem;
+  padding-right: 0.5rem;
+}
+
+.alert-close {
+  border: none;
+  background-color: transparent;
+  font-size: 1.15rem;
+}
+
 .banner {
   position: absolute;
   object-fit: cover;

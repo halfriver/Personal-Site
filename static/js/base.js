@@ -93,6 +93,33 @@ $(document).ready(function() {
     }
   }
 
+  // copy email link to clipboard
+  $('.email-link').click(function() {
+    $.ajax('/get_email/',
+        {
+          data: {
+            csrfmiddlewaretoken: window.COOKIES.csrfmiddlewaretoken,
+            email: 'email'
+          },
+          type: 'POST',
+        }
+      )
+      .done(function(data) {
+        navigator.clipboard.writeText(data);
+        $('#email-alert').removeClass('d-none');
+        return data;
+      })
+      .fail(function(xhr, errmsg, err) {
+         alert('There is an error.');
+         console.log(xhr.status + ": " + xhr.responseText);
+     });
+  });
+
+  // close email Alert
+  $('.alert-close').click(function() {
+    $('#email-alert').addClass('d-none');
+  });
+
   // when Japanese is selected, swap language on navbar titles
   $('.lang-display').parent().hover(function() {
     $(this).find('.jpn-display').removeClass('d-none');
@@ -160,7 +187,7 @@ $(document).ready(function() {
          console.log(xhr.status + ": " + xhr.responseText);
      });
   }
-
+  
   // initialize tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

@@ -6,7 +6,7 @@ from .models import ArtPiece, ArtTag, Program
 from django.templatetags.static import static
 from django.core.mail import send_mail
 from django.core import mail
-# from .secrets import EMAIL
+from .secrets import EMAIL
 from random import choice
 from .settings import BASE_DIR
 import os
@@ -149,3 +149,11 @@ def update_session(request):
     else:
         request.session['darkmode'] = 'light'
     return HttpResponse('ok')
+
+
+@ensure_csrf_cookie
+def get_email(request):
+    if not request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest' or not request.method=='POST':
+        return HttpResponseNotAllowed(['POST'])
+    if request.POST.get('email') == 'email':
+        return HttpResponse(EMAIL)

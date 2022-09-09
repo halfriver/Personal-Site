@@ -65,6 +65,11 @@ nav {
   color: rgba(38, 40, 41, 1)!important;
 }
 
+.alert-custom {
+  color: rgba(38, 40, 41, 1);
+  background-color: rgba(208, 219, 225, 1);
+}
+
 .banner-text {
   color: rgba(43, 80, 99, 1);
   background-color: rgba(238, 243, 245, 0.9);
@@ -82,9 +87,9 @@ nav {
   background-color: rgba(222, 230, 234, 1);
 }
 
-.carousel-art {
+/* .carousel-art {
   border-bottom: 3px solid rgba(54, 96, 117, 0.5);
-}
+} */
 
 .section-head {
   color: rgba(43, 80, 99, 1);

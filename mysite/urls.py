@@ -13,6 +13,7 @@ urlpatterns = [
     path('art/', views.MainArt.as_view(), name='main_art'),
     path('contact/', views.MainContact.as_view(), name='main_contact'),
     path('update_session/', views.update_session),
+    path('get_email/', views.get_email),
     path('gen_email/', views.gen_email)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
