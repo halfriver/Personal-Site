@@ -5,4 +5,4 @@ mysite/secrets.py
 mysite/migrations/
 static/files/
 static/media/
-
+media

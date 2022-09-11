@@ -48,10 +48,6 @@ nav {
   background-color: rgba(54, 96, 117, 0.65);
 }
 
-/* .nav-box-vis {
-  border: 2px solid rgba(38, 40, 41, 0.25);
-} */
-
 .dropdown-menu {
   background-color: rgba(208, 219, 225, 1);
 }
@@ -131,7 +127,6 @@ nav {
 .slider:before {
   background-color: rgba(240, 243, 245, 0.75);
 }
-
 input:checked + .slider {
   background-color: rgba(22, 42, 52, 1);
   border: 2px solid rgba(201, 211, 216, .55);
@@ -150,9 +145,8 @@ input:checked + .slider {
   color: rgba(43, 80, 99, 1);
 }
 
-/* resume */
+/* RESUME */
 .download-button {
-  /* border: 2px solid rgba(201, 211, 216, 0.55); */
   background-color: rgba(54, 96, 117, 0.85);
   color: rgba(238, 243, 245, 1);
 }
@@ -189,4 +183,26 @@ input:checked + .slider {
 
 .emphasis {
   color: rgba(54, 96, 117, 1);
+}
+
+
+/* ART PORTFOLIO */
+.gallery-cat {
+  border-bottom: 2px solid rgba(43, 80, 99, 0.5);
+  color: rgba(43, 80, 99, 0.5);
+}
+.gallery-cat:hover, .gallery-cat:focus {
+  border-bottom: 2px solid rgba(43, 80, 99, 0.5);
+  color: rgba(43, 80, 99, 1);
+}
+.gallery-cat:active, .gallery-cat.active {
+  border-bottom: 2px solid rgba(43, 80, 99, 1);
+  font-weight: 600;
+  color: rgba(43, 80, 99, 1);
+}
+.gallery {
+  background-color: rgba(238, 243, 245, 1);
+}
+.card-overlay {
+  background-color: rgba(238, 243, 245, 0.8);
 }

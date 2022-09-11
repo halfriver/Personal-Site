@@ -6,23 +6,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 {% endblock styles %}
 
-{% block scripts %}<script src="{% static 'js/art.js' %}"></script>{% endblock scripts %}
+{% block scripts %}
+<script src="{% static 'js/gallery.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+{% endblock scripts %}
 
 {% block title %} | Art Portfolio{% endblock %}
 {% block nav-art %}active{% endblock %}
 
 {% block banner %}
-<div class="banner-container large-banner row justify-content-center">
+<div class="banner-container medium-banner row justify-content-center">
   <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
-  <div id="art-carousel" class="container carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide carousel-fade" data-bs-ride="carousel">
-    <div class="d-none carousel-text-box">
-      <div class="banner-text">
+  <div id="art-carousel" class="carousel-fade carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide" data-bs-ride="carousel">
+    <div class="carousel-text-box">
+      <!-- <div class="banner-text"> -->
         {% if lang == "eng" %}
-          <h2>Art Portfolio</h2>
+          <h1>Art Portfolio</h1>
         {% elif lang == "jpn" %}
-          <h2>アート</h2>
+          <h1>アート</h1>
         {% endif %}
-      </div>
+      <!-- </div> -->
     </div>
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -31,55 +34,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="7500">
-        <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art">
-        <!-- <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art d-block"></div> -->
+        <img src="{% if darkmode == "dark" %}{% static 'media/art/sample1_d.png' %}{% else %}{% static 'media/art/sample1_l.png' %}{% endif %}" class="carousel-art">
       </div>
       <div class="carousel-item" data-bs-interval="7500">
-        <img src="{% static 'media/art/Mosa.png' %}" class="carousel-art">
+        <img src="{% if darkmode == "dark" %}{% static 'media/art/sample2_d.png' %}{% else %}{% static 'media/art/sample2_l.png' %}{% endif %}" class="carousel-art">
       </div>
       <div class="carousel-item" data-bs-interval="7500">
-        <img src="{% static 'media/art/Serilon.png' %}" class="carousel-art">
-      </div>
-    </div>
-    <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-<!-- Banner Carousel V1 -->
-<div class="d-none banner-container large-banner row justify-content-center">
-  <img class="banner large-banner" src="{% if darkmode == "dark" %}{% static 'media/header_dark.png' %}{% else %}{% static 'media/header_light.png' %}{% endif %}">
-  <div id="art-carousel" class="container carousel {% if darkmode != "dark" %}carousel-dark{% endif %} slide carousel-fade" data-bs-ride="carousel">
-    <div class="d-none carousel-text-box">
-      <div class="banner-text">
-        {% if lang == "eng" %}
-          <h2>Art Portfolio</h2>
-        {% elif lang == "jpn" %}
-          <h2>アート</h2>
-        {% endif %}
-      </div>
-    </div>
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#art-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="7500">
-        <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art">
-        <!-- <img src="{% static 'media/art/Arishok.png' %}" class="carousel-art d-block"></div> -->
-      </div>
-      <div class="carousel-item" data-bs-interval="7500">
-        <img src="{% static 'media/art/Mosa.png' %}" class="carousel-art">
-      </div>
-      <div class="carousel-item" data-bs-interval="7500">
-        <img src="{% static 'media/art/Serilon.png' %}" class="carousel-art">
+        <img src="{% if darkmode == "dark" %}{% static 'media/art/sample3_d.png' %}{% else %}{% static 'media/art/sample3_l.png' %}{% endif %}" class="carousel-art">
       </div>
     </div>
     <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#art-carousel" data-bs-slide="prev">
@@ -95,48 +56,32 @@
 {% endblock %}
 
 {% block content %}
+<!-- Gallery -->
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-auto">
-      <div class="banner-text">
-        {% if lang == "eng" %}
-          <h1>Art Portfolio</h1>
-        {% elif lang == "jpn" %}
-          <h1>アート</h1>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
 
-
-<div class="row justify-content-center">
-  <div class="construction col-6">
-    <h3><i class="bi bi-exclamation-triangle"></i>  {% if lang == 'jpn' %}構築中{% else %}Under Construction{% endif %}  <i class="bi bi-exclamation-triangle"></i></h3>
-  </div>
-</div>
-
-<div class="container gallery d-none">
-  <div class="tab-bar">
-    <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
-      <li class="nav-item gallery-nav-item">
-        <a class="nav-tab active" id="pills-all-tab" data-toggle="pill" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
+  <!-- Tab Bar -->
+  <div class="row">
+    <ul class="nav tab-bar justify-content-center" id="gallery-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link gallery-cat active" id="show-all-tab" data-bs-toggle="tab" data-bs-target="#pane-show-all" type="button" role="tab" aria-controls="pane-show-all" aria-selected="true">Show All</a>
       </li>
       {% for i in tag %}
-        <li class="nav-item gallery-nav-item">
-          <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="pill" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
-        </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link gallery-cat" id="{{i|cut:" "}}-tab" data-bs-toggle="tab" data-bs-target="#pane-{{i.name|cut:""}}" type="button" role="tab" aria-controls="pane-{{i.name|cut:""}}" aria-selected="false">{{i}}</a>
+      </li>
       {% endfor %}
     </ul>
   </div>
-  <div class="tab-content tab-body" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
-      <div class="card-columns">
+  <!-- Tab Contents -->
+  <div class="row gallery tab-content" style="min-height: 500px" id="tabContent">
+    <div class="tab-pane fade show active" id="pane-show-all" role="tabpanel" aria-labelledby="show-all-tab" tabindex="0">
+      <div class="row mason-grid" data-masonry='{"percentPosition": true }'>
         {% for artpiece in all %}
+        <div class="col-sm-6 col-lg-4">
           <div class="card">
-            <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
+            <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card Image">
             <a id="details-{{artpiece.name|cut:" "}}-all" data-counter="{{forloop.counter}}" data-tag="all">
-              <div class="card-img-overlay" hidden>
+              <div class="card-img-overlay d-none">
                 <div class="row h-100 align-items-center justify-content-center">
                   <div class="col-8 card-overlay d-flex justify-content-center">
                     <div class="card-title">
@@ -147,105 +92,31 @@
               </div>
             </a>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
+
     {% for i in tag %}
-      <div class="tab-pane fade" id="{{i|cut:" "}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab">
-        <div class="card-columns">
-          {% for key, value in art.items %}
-            {% if key == i.name %}
-              {% for artpiece in value %}
-                <div class="card">
-                  <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
-                  <a id="details-{{artpiece.name|cut:" "}}-{{key}}" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">
-                    <div class="card-img-overlay" hidden>
-                      <div class="row h-100 align-items-center justify-content-center">
-                        <div class="col-10 card-overlay">
-                          <div class="row card-title d-flex justify-content-center">
-                            {{artpiece.name}}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-
-  <div id="modal-all" class="modal">
-    <div class="row align-items-center justify-content-center h-100">
-      <div class="col-lg-8 col-md-10 animate__animated animate__fadeInDown animate__faster">
-        {% for artpiece in all %}
-        <div class="mySlides-all">
-          <div class="modal-content">
-            <div class="modal-content-top">
-              <span class="close">&times;</span>
-              <div class="slide-img-container">
-                <a href="{% get_media_prefix %}{{artpiece.image}}" target="_blank">
-                  <img class="slide-img" src="{% get_media_prefix %}{{artpiece.image}}">
-                </a>
-              </div>
-              <span class="prev" data-tag="all">&#10094;</span>
-              <span class="next" data-tag="all">&#10095;</span>
-            </div>
-            <div class="modal-content-bottom row align-items-center justify-content-center">
-              <div class="col-md-8">
-                <div class="caption-container title-container">
-                  {{artpiece.name}}
-                </div>
-                <div class="caption-container">
-                  <p>{{artpiece.description|safe}}</p>
-                  <div class="date-container">
-                    {{artpiece.date}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  {% for i in tag %}
-  <div id="modal-{{i|cut:" "}}" class="modal">
-    <div class="row align-items-center justify-content-center h-100">
-      <div class="col-lg-8 col-md-10">
+    <div class="tab-pane fade show" id="pane-{{i.name|cut:""}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab" tabindex="0">
+      <div class="row mason-grid" data-masonry='{"percentPosition": true }'>
         {% for key, value in art.items %}
           {% if key == i.name %}
             {% for artpiece in value %}
-            <div class="mySlides-{{i|cut:" "}}">
-              <div class="modal-content">
-                <div class="modal-content-top">
-                  <span class="close">&times;</span>
-                  <div class="slide-img-container">
-                    <a href="{% get_media_prefix %}{{artpiece.image}}" target="_blank">
-                      <img class="slide-img" src="{% get_media_prefix %}{{artpiece.image}}">
-                    </a>
-                  </div>
-                  <span class="prev"  data-tag="{{i|cut:" "}}">&#10094;</span>
-                  <span class="next"  data-tag="{{i|cut:" "}}">&#10095;</span>
-                </div>
-                <div class="modal-content-bottom row align-items-center justify-content-center">
-                  <div class="col-md-8">
-                    <div class="caption-container title-container">
-                      {{artpiece.name}}
-                    </div>
-                    <div class="caption-container">
-                      <p>{{artpiece.description|safe}}</p>
-                      <div class="date-container">
-                        {{artpiece.date}}
+            <div class="col-sm-6 col-lg-4">
+              <div class="card">
+                <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
+                <a id="details-{{artpiece.name|cut:" "}}-{{key}}" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">
+                  <div class="card-img-overlay d-none">
+                    <div class="row h-100 align-items-center justify-content-center">
+                      <div class="col-8 card-overlay d-flex justify-content-center">
+                        <div class="card-title">
+                          {{artpiece.name}}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             {% endfor %}
@@ -253,7 +124,80 @@
         {% endfor %}
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
+
+<!-- V1 non-cooperative row -->
+<div class="d-none container">
+  <!-- Tab Bar -->
+  <div class="row">
+    <ul class="nav tab-bar justify-content-center" id="gallery-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link gallery-cat active" id="show-all-tab" data-bs-toggle="tab" data-bs-target="#pane-show-all" type="button" role="tab" aria-controls="pane-show-all" aria-selected="true">Show All</a>
+      </li>
+      {% for i in tag %}
+      <li class="nav-item" role="presentation">
+        <a class="nav-link gallery-cat" id="{{i|cut:" "}}-tab" data-bs-toggle="tab" data-bs-target="#pane-{{i.name|cut:""}}" type="button" role="tab" aria-controls="pane-{{i.name|cut:""}}" aria-selected="false">{{i}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- Tab Contents -->
+  <div class="row gallery">
+    <div class="tab-content" id="tabContent">
+      <div class="tab-pane fade show active" id="pane-show-all" role="tabpanel" aria-labelledby="show-all-tab" tabindex="0">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+          {% for artpiece in all %}
+          <div class="col-sm-6 col-lg-4">
+            <div class="card">
+              <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card Image">
+              <a id="details-{{artpiece.name|cut:" "}}-all" data-counter="{{forloop.counter}}" data-tag="all">
+                <div class="card-img-overlay d-none">
+                  <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-8 card-overlay d-flex justify-content-center">
+                      <div class="card-title">
+                        {{artpiece.name}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% for i in tag %}
+      <div class="tab-pane fade show" id="pane-{{i.name|cut:""}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab" tabindex="0">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+          {% for key, value in art.items %}
+            {% if key == i.name %}
+              {% for artpiece in value %}
+              <div class="col-sm-6 col-lg-4">
+                <div class="card">
+                  <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
+                  <a id="details-{{artpiece.name|cut:" "}}-{{key}}" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">
+                    <div class="card-img-overlay d-none">
+                      <div class="row h-100 align-items-center justify-content-center">
+                        <div class="col-8 card-overlay d-flex justify-content-center">
+                          <div class="card-title">
+                            {{artpiece.name}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 {% endblock %}

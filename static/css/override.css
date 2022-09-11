@@ -61,7 +61,7 @@ a {
 a:hover {
   text-decoration: none;
 }
-/* Add a heart after links */
+/* Add an arrow after links */
 p > a::after {
   content: " ⤿ ";
 }

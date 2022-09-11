@@ -1,6 +1,4 @@
 #art-carousel {
-  margin-top: 95px;
-  margin-bottom: 1rem;
   border-radius: 5px;
 }
 
@@ -21,8 +19,8 @@
 }
 
 .carousel-inner {
-  border-radius: 5px;
-  padding: 1rem 1rem 3.5rem 1rem;
+  border-radius: 0 5px 5px 0;
+  /* padding: 1rem 1rem 3.5rem 1rem; */
   overflow-y: hidden;
   align-items: center;
   justify-content: center;
@@ -31,6 +29,12 @@
 .carousel-item {
   position: relative;
   overflow: hidden;
+}
+
+/* fading out fix */
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 1s ease-in-out;
 }
 
 .carousel-art {
@@ -43,7 +47,40 @@
   /* transition: transform 2s ease, opacity .5s ease-out */
 }
 
-@media (min-width: 1200px) {
+.tab-bar {
+  padding-top: 1.5rem;
+}
+
+.gallery {
+  border-radius: 5px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.card {
+  margin: 0.5rem;
+  border: none;
+  background-color: transparent;
+}
+.card-img {
+  border: none;
+}
+.card:hover .card-img {
+  opacity: 0.6;
+  transition: 0.5s ease;
+}
+.card-title {
+  margin: 0;
+}
+.card-img-overlay > .row {
+  --bs-gutter-x: 0;
+}
+.card-overlay {
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* @media (min-width: 1200px) {
   .carousel {
     max-width: 1200px;
   }
@@ -68,4 +105,4 @@
   .banner-text {
     width: 100%;
   }
-}
+} */
